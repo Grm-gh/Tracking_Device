@@ -8,7 +8,10 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get("/",function(req,res){
-    res.send("there");
+    res.render("index");
+});
+io.on('connection', (socket) => {
+    console.log('A user connected');
 });
 
 server.listen(3000, () => {
